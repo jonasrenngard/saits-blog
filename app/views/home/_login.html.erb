@@ -1,0 +1,12 @@
+<div class="welcome">
+  <% if signed_in? %>
+    <button class="button alert"><%= link_to("logout",destroy_user_session_path,method: :delete) %></button>
+    <button class="button primary"><%= link_to("posts",posts_path) %></button>
+
+  <% else %>
+    <button class="button success">
+      <%= link_to("Aldready have an account? Sign in",new_user_session_path) %>
+    </button>
+  <% end %>
+<!--<button class="button success"><%= link_to("Aldready have an account? Sign in",new_user_session_path) %></button>-->
+</div>

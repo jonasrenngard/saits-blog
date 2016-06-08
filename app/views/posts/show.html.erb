@@ -1,0 +1,11 @@
+<div class="box effect1">
+  <header class="box-header">
+    <h2><%= link_to(@post.title, @post) %></h2>
+  </header>
+    <p><%= @post.content %></p>
+    <p><%= link_to @post.user.email, user_path(@post.user) %></p>
+    <p><%= @post.created_at.strftime("%A %B %Y") %></p>
+    <button class="button sucess">View Comments</button>
+    <%= render 'comments/form' %>
+    <%= render @post.comments.persisted %>
+  </div>
